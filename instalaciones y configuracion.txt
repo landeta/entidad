@@ -1,0 +1,57 @@
+Para las aplicaciones existentes, siga estos pasos para comenzar a usar material angular.
+
+ 	Paso 1: Instale material angular, CDK angular y animaciones angulares
+Puede usar la herramienta de línea de comandos npm o yarn para instalar paquetes. Use lo que sea apropiado para su proyecto en los ejemplos a continuación.
+
+link NGP
+npm install --save @angular/material @angular/cdk @angular/animations
+
+
+		Alternativa 2: Devkit angular 6+
+El uso del ng addcomando Angular CLI actualizará su proyecto Angular con las dependencias correctas, realizará cambios de configuración y ejecutará el código de inicialización.
+
+ng add @angular/material
+
+
+		resultado
+
+C:\Angular\entidad\client>ng add @angular/material
+Skipping installation: Package already installed
+? Choose a prebuilt theme name, or "custom" for a custom theme: Purple/Green       [ Preview: https://material.angular.io?theme=purple-green ]
+? Set up HammerJS for gesture recognition? Yes
+? Set up browser animations for Angular Material? Yes
+
+
+	Paso 2: configurar animaciones
+Una vez que el paquete de animaciones esté instalado, impórtelo BrowserAnimationsModuleen su aplicación para habilitar el soporte de animaciones.
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+
+	Paso 3: Importar los módulos de componentes
+Importe el NgModule para cada componente que quiera usar:
+
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+@NgModule({
+  ...
+  imports: [MatButtonModule, MatCheckboxModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+
+
+////////////////////////////////////////////
+uso: ng generar m <nombre> [opciones] 
+	argumentos: 
+		schematic: El esquema o la colección: esquema para generar. 
+		name: El nombre del NgModule. 
+	opciones: 
+		--defaults Cuando es verdadero, deshabilita las solicitudes de entrada interactivas para las opciones con un valor predeterminado. --dry-run (-d) Cuando es verdadero, ejecuta e informa la actividad sin escribir los resultados. --flat Cuando es verdadero, crea los nuevos archivos en el nivel superior de la raíz del proyecto actual. --force (-f) Cuando es verdadero, obliga a sobrescribir los archivos existentes. --help Muestra un mensaje de ayuda para este comando en la consola. --interactivo Cuando es falso, desactiva las solicitudes de entrada interactivas. --lint-fix Cuando es verdadero, aplica correcciones de pelusa después de generar el módulo. --módulo (-m) El NgModule declarante. --proyecto El nombre del proyecto. --routing Cuando es verdadero, crea un módulo de enrutamiento. --routing-scope El ámbito para el nuevo módulo de enrutamiento. Ayuda para el esquema m Crea una nueva definición genérica de NgModule en el proyecto dado o predeterminado. argumentos: nombre El nombre de NgModule. opciones: --flat Cuando es verdadero, crea los nuevos archivos en el nivel superior de la raíz del proyecto actual. --lint-fix Cuando es verdadero, aplica correcciones de pelusa después de generar el módulo. --módulo (-m) El NgModule declarante. --proyecto El nombre del proyecto. --routing Cuando es verdadero, crea un módulo de enrutamiento. --routing-scope El ámbito para el nuevo módulo de enrutamiento. Para ver la ayuda para una ejecución esquemática: ng generar <schematic> --help
+///////////////////////////////////////////
